@@ -1,5 +1,7 @@
 # generate-a-team
 
+Link to video: https://drive.google.com/file/d/1CqhqtZ4774ZeKpp7jjljY8fuRc-tDBxj/view
+
 AS A manager
 I WANT to generate a webpage that displays my team's basic info
 SO THAT I have quick access to their emails and GitHub profiles
