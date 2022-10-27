@@ -4,7 +4,7 @@ const generateHTML = require('./generateHTML');
 var fs = require('fs');
 var answerArray = [];
 
-const employeeList = [managerList, engineerList, internList];
+// const employeeList = [managerList, engineerList, internList];
 
 //creates array of questions for user input
 function init() {
@@ -61,12 +61,13 @@ function init() {
                 name: 'engineerGithub',
                 message: "What is the engineer's GitHub username?",
             },
+            //this will stop it from looping endlessly asking about the manager
             {
                 type: 'list',
                 name: 'finish',
-                message: 'Would you like to add another employee?:',
-                choices: ['Intern', 'Finish building my team'],
-            },
+                message: 'Would you like to add another employee?',
+                choices: ['Yes', 'No'],
+              },
             {
                 when: (answers) => answers.finish === "Intern",
                 type: 'input',
