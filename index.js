@@ -77,6 +77,12 @@ function init() {
                 message: "What is the intern's ID?",
               },
               {
+                when: (answers) => answers.finish === "Intern",
+                type: 'input',
+                name: 'internSchool',
+                message: "What school does the intern attend?",
+              },
+              {
                 when: (answers) => answers.addEmployee === "Intern",
                 type: 'input',
                 name: 'internName',
@@ -88,6 +94,11 @@ function init() {
                 name: 'internID',
                 message: "What is the intern's ID?",
               },
-
+              {
+                when: (answers) => answers.addEmployee === "Intern",
+                type: 'input',
+                name: 'internSchool',
+                message: "What school does the intern attend?",
+              },
         ])
 }
