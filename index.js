@@ -1,9 +1,12 @@
-// packages needed
+// include packages needed for this application
 const inquirer = require('inquirer');
 const generateHTML = require('./generateHTML');
 var fs = require('fs');
 var answerArray = [];
 
+const employeeList = [managerList, engineerList, internList];
+
+//creates array of questions for user input
 function init() {
     inquirer
         .prompt([
@@ -101,4 +104,34 @@ function init() {
                 message: "What school does the intern attend?",
               },
         ])
+
+        .then((answers) => {
+            answerArray.push(answers);
+            if ('No' === answers.finish) {
+              writeToFile("EMPLOYEES.html", generateHTML(answerArray));
+              console.log('HTML successfully generated', answerArray);
+            }
+            else {
+              // use class to make employee 
+              init();
+            }
+            console.log(answers);
+          })
+          .catch((error) => {
+            if (error.isTtyError) {
+                // error if prompt could not be rendered in the current environment
+              console.log (["Could not be rendered in the current environment"]);
+            } else {
+                //if there was another issue
+              console.log (["Something else went wrong :( "]);
+            }
+          });
 }
+
+// function that writes HTML file: 
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => console.log(err))
+  };
+
+// function call to initialize app
+init ();
