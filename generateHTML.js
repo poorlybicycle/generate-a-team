@@ -48,12 +48,12 @@ function generateHTML(employees) {
   <div class="hero-image">
     <div class="hero-text">
       <h1>My Team</h1>
-      <p>Showcased are my team members with position titles and descriptions, alongside their methods of contact.</p>
+      <p>Meet our team! Feel free to contact us using the information below..</p>
     </div>
   </div>
   <br>
   <div class="container">
-    <h2>Panels with Contextual Classes</h2>
+    <h2>Panels for Employees</h2>
     <div class="panel-group">
     ${employeePanels}
     </div>
