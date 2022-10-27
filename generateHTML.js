@@ -1,40 +1,31 @@
-// // create a function to generate markdown for HTML?
-// function generateHTML(employees) {
-//     var employeeList = {managerList, engineerList, internList};
-
-// }
-
+//function to generate markdown for HTML
 function generateHTML(employees) {
-    var employeeList = { managerList, engineerList, internList };
-    // make a for loop through employee
-    // for () {
-    //     employees.push(employeeList);
-    // }
+    var employeePanels = {managerPanel, engineerPanel, internPanel};
 
-        // Info list for each employee 
-        var managerList = ` <div class="panel panel-default">
+    // info list for each employee 
+    var managerPanel = ` <div class="panel panel-default">
 <div class="panel-heading">Manager</div>
-<div class="panel-body">${employees.managername}</div>
-<div class="panel-body">${employees.employeeID}</div>
-<div class="panel-body">${employees.email}</div>
-<div class="panel-body">${employees.officenumber}</div>
+<div class="panel-body">${employees.managerName}</div>
+<div class="panel-body">${employees.managerEmployeeID}</div>
+<div class="panel-body">${employees.managerEmail}</div>
+<div class="panel-body">${employees.managerOfficeNum}</div>
 </div>`
-        var engineerList = ` <div class="panel panel-default">
+    var engineerPanel = ` <div class="panel panel-default">
 <div class="panel-heading">Engineer</div>
-<div class="panel-body">${employees.name}</div>
-<div class="panel-body">${employees.employeeID}</div>
-<div class="panel-body">${employees.email}</div>
-<div class="panel-body">${employees.github}</div>
+<div class="panel-body">${employees.engineerName}</div>
+<div class="panel-body">${employees.engineerID}</div>
+<div class="panel-body">${employees.engineerEmail}</div>
+<div class="panel-body">${employees.engineerGithub}</div>
 </div>`
-        var internList = ` <div class="panel panel-default">
+    var internPanel = ` <div class="panel panel-default">
 <div class="panel-heading">Engineer</div>
-<div class="panel-body">${employees.name}</div>
-<div class="panel-body">${employees.employeeID}</div>
+<div class="panel-body">${employees.internName}</div>
+<div class="panel-body">${employees.internID}</div>
 <div class="panel-body">${employees.email}</div>
-<div class="panel-body">${employees.school}</div>
+<div class="panel-body">${employees.internSchool}</div>
 </div>`
-
-        return `<!DOCTYPE html>
+   
+    return `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -57,18 +48,18 @@ function generateHTML(employees) {
   <div class="hero-image">
     <div class="hero-text">
       <h1>My Team</h1>
-      <p>Meet our team! Feel free to contact us using the information below.</p>
+      <p>Showcased are my team members with position titles and descriptions, alongside their methods of contact.</p>
     </div>
   </div>
   <br>
   <div class="container">
     <h2>Panels with Contextual Classes</h2>
     <div class="panel-group">
-    ${employeeList}
+    ${employeePanels}
     </div>
 </body>
 
 </html>`
+}
 
-
- module.exports = generateHTML;
+module.exports = generateHTML;
